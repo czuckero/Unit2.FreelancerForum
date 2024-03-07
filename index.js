@@ -25,7 +25,7 @@ const freelancers = [
     initialFreelancers.replaceChildren(...initialFreelancerElements);
 
     const avg = document.querySelector("#avg"); 
-    
+
 }
 
 function generateRandomFreelancer() {
@@ -36,11 +36,14 @@ function generateRandomFreelancer() {
     freelancers.push({name: randomName, occupation: randomOccupation, startingPrice: randomPrice});
     
     renderInitialFreelancers();
-
+    averagePriceCalculator();
 }
 
-function averagePrice() {
-
+function averagePriceCalculator() {
+    const avgPrice = document.querySelector("#avg");
+    const averagePrice = freelancers.reduce((acc, freelancer) => acc + freelancer.startingPrice, 0) / freelancers.length;
+    console.log(averagePrice);
+    avgPrice.innerHTML = `<div>${averagePrice}</div>`;
 }
 
 setInterval(generateRandomFreelancer, 5000);
