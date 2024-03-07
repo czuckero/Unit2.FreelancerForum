@@ -10,9 +10,9 @@ const freelancers = [
   ];
   
 // Function to render the intial freelancers into the table
-  renderInitialFreelancers();
+  renderFreelancers();
 
-  function renderInitialFreelancers() {
+  function renderFreelancers() {
     // Selecting the freelancers id in the table
     const initialFreelancers = document.querySelector("#freelancers");
     // Iterating through the freelancers object array to display each freelancer property in the table
@@ -28,6 +28,7 @@ const freelancers = [
 
 }
 
+// Created a function that generates random freelancers and pushes them to the freelancers array
 function generateRandomFreelancer() {
     const randomName = names[Math.floor(Math.random() * names.length)];
     const randomOccupation = occupations[Math.floor(Math.random() * occupations.length)];
@@ -35,10 +36,11 @@ function generateRandomFreelancer() {
     console.log(randomPrice);
     freelancers.push({name: randomName, occupation: randomOccupation, startingPrice: randomPrice});
     
-    renderInitialFreelancers();
+    renderFreelancers();
     averagePriceCalculator();
 }
 
+// Function that generates the average freelancer starting price
 function averagePriceCalculator() {
     const avgPrice = document.querySelector("#avg");
     const averagePrice = freelancers.reduce((acc, freelancer) => acc + freelancer.startingPrice, 0) / freelancers.length;
