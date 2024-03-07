@@ -1,4 +1,4 @@
-// Here are names, occupations, and prices of potential freelancers
+// Here are names and occupations of potential freelancers
 const names = ["Dr. Oblong", "Uncle Barry", "Sir Mountaintop", "Dr. Raphael", "Professor Overlord Williams"];
 const occupations = ["Teacher", "Programmer", "Gardener", "Writer", "Driver", "Gamer"];
 
